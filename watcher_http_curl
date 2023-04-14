@@ -1,0 +1,33 @@
+{
+  "trigger": {
+    "schedule": {
+      "interval": "30m"
+    }
+  },
+  "input": {
+    "none": {}
+  },
+  "condition": {
+    "always": {}
+  },
+  "actions": {
+    "get_token": {
+      "webhook": {
+        "scheme": "http",
+        "host": "monserveur.google.com",
+        "port": 8080,
+        "method": "get",
+        "path": "cookie.js",
+        "params": {},
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    }
+  }
+}
+
+
+# Exemple créé pour un watcher qui vient récuperer d'un site une information et l'afficher dans le watcher
+# Exemple de watcher qui permet de récuperer une informations sur le site http://monserveur.google.com:8080/cookie.js 
+# Elasticsearch Watcher Webhook Action like curl 
